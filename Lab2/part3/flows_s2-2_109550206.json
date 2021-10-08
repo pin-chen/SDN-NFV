@@ -1,16 +1,12 @@
 {
-  "priority": 50000,
+  "priority": 51000,
   "timeout": 0,
   "isPermanent": true,
   "selector": {
     "criteria": [
       {
         "type": "IN_PORT",
-        "port": "1"
-      },
-      {
-        "type": "ETH_TYPE",
-        "ethType": "0x0806"
+        "port": "2"
       }
     ]
   },
@@ -18,7 +14,11 @@
     "instructions": [
       {
         "type": "OUTPUT",
-        "port": "2"
+        "port": "1"
+      },
+      {
+        "type": "OUTPUT",
+        "port": "3"
       }
     ]
   }

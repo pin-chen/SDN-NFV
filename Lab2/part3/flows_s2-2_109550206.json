@@ -15,10 +15,6 @@
       {
         "type": "OUTPUT",
         "port": "1"
-      },
-      {
-        "type": "OUTPUT",
-        "port": "3"
       }
     ]
   }

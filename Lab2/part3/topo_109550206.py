@@ -1,3 +1,6 @@
+#Class: 1101 軟體定義網路及網路功能虛擬化 曾建超
+#Author: 陳品劭 109550206
+#Date: 20211108
 from mininet.topo import Topo
 
 class Project2_Topo_109550206( Topo ):

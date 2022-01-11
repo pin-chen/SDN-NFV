@@ -178,6 +178,7 @@ public class AppComponent{
 				if (config != null) {
 					EdgeSwitchSubnet_table.clear();
 					SwitchVlanId_table.clear();
+					CPMac_table.clear();
 					JsonNode vlanconfig = config.node();
 					JsonNode vlaninfo = vlanconfig.findValue("info");
 					JsonNode subnet = vlaninfo.findValue("subnet");
@@ -207,7 +208,7 @@ public class AppComponent{
 						CPMac_table.put(ConnectPoint.deviceConnectPoint(cp), MacAddress.valueOf(mac));
 					}
 					segmentRouting();
-					popVlanId();
+					edgeRouting();
 				}
 			}
 		}
@@ -242,14 +243,13 @@ public class AppComponent{
 								flowObjectiveService.forward( device, Fo );
 							}
 						}
+						break;
 					}
 				}
-			}
-			
-					
+			}	
 		}
 
-		public void popVlanId() {
+		public void edgeRouting() {
 			for(ConnectPoint cp : CPMac_table.keySet()) {
 				PortNumber outputPort = cp.port();
 				DeviceId device = cp.deviceId();
